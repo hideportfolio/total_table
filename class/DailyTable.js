@@ -16,6 +16,7 @@ class DailyTable {
         this.jalanPoint = matrix[SHEET_DAILY.row.jalan_point - 1][1];
         this.jalanCoupon = matrix[SHEET_DAILY.row.jalan_coupon - 1][1];
         this.playInGero = matrix[SHEET_DAILY.row.play_in_gero - 1][1];
+        this.onlinePayment = matrix[SHEET_DAILY.row.online_payment - 1][1];
         this.deductionSubtotal = matrix[SHEET_DAILY.row.deduction_subtotal - 1][0];
 
         this.rainbowFish = matrix[SHEET_DAILY.row.rainbow_fish - 1][0];
@@ -32,52 +33,81 @@ class DailyTable {
         this.styrol = matrix[SHEET_DAILY.row.styrol - 1][0];
         this.lunch = matrix[SHEET_DAILY.row.lunch - 1][0];
         this.subtotal = matrix[SHEET_DAILY.row.subtotal - 1][0];
-        this.product_sales = matrix[SHEET_DAILY.row.product_sales - 1][0];
+
+        this.boilRockFish = matrix[SHEET_DAILY.row.boil_rock_fish - 1][0];
+        this.boilAmago = matrix[SHEET_DAILY.row.boil_amago - 1][0];
+        this.dryNightRainbow = matrix[SHEET_DAILY.row.dry_night_rainbow - 1][0];
+        this.dryNightRockFish = matrix[SHEET_DAILY.row.dry_night_rock_fish - 1][0];
+        this.dryNightAmago = matrix[SHEET_DAILY.row.dry_night_amago - 1][0];
+        this.boneAlcohol = matrix[SHEET_DAILY.row.bone_alcohol - 1][0];
+        this.smoked = matrix[SHEET_DAILY.row.smoked - 1][0];
+        this.beer = matrix[SHEET_DAILY.row.beer - 1][0];
+        this.beverage = matrix[SHEET_DAILY.row.beverage - 1][0];
+        this.rainKappa = matrix[SHEET_DAILY.row.rain_kappa - 1][0];
+        this.tenugui = matrix[SHEET_DAILY.row.tenugui - 1][0];
+
+        this.productSales = matrix[SHEET_DAILY.row.product_sales - 1][0];
+
         this.total = matrix[SHEET_DAILY.row.total - 1][0];
     }
     getConsignmentList1() {
         return [
-            this.admission, 
-            this.riverFishing, 
-            this.pondFishing, 
-            this.lureFishingRental, 
-            this.lureLostSecondTimeAfter, 
-            this.riverFishingSetMeal, 
-            this.pondFishingSetMeal, 
-            this.lureHalfDayLesson, 
-            this.lureAllDayLesson, 
-            this.lureHalfDayLessonPack, 
-            this.lureAllDayLessonPack, 
-            this.campSiteUseFee, 
+            this.admission,
+            this.riverFishing,
+            this.pondFishing,
+            this.lureFishingRental,
+            this.lureLostSecondTimeAfter,
+            this.riverFishingSetMeal,
+            this.pondFishingSetMeal,
+            this.lureHalfDayLesson,
+            this.lureAllDayLesson,
+            this.lureHalfDayLessonPack,
+            this.lureAllDayLessonPack,
+            this.campSiteUseFee,
         ];
     }
 
     getConsignmentList2() {
         return [
-        this.rainbowFish, 
-        this.rockFish, 
-        this.saltRoast, 
-        this.tempura, 
-        this.sashimi, 
-        this.stickDrop, 
-        this.saltRoastRockFish, 
-        this.tempuraRockFish, 
-        this.stickDropRockFish, 
-        this.riceSet, 
-        this.riceSingle, 
-        this.styrol, 
-        this.lunch, 
-        this.subtotal,
-        this.product_sales,
-        this.total,
+            this.rainbowFish,
+            this.rockFish,
+            this.saltRoast,
+            this.tempura,
+            this.sashimi,
+            this.stickDrop,
+            this.saltRoastRockFish,
+            this.tempuraRockFish,
+            this.stickDropRockFish,
+            this.riceSet,
+            this.riceSingle,
+            this.styrol,
+            this.lunch,
+            this.subtotal,
+            this.product_sales,
+            this.total,
         ];
     }
-    getClearingList(){
-        return[
+    getOutsideConsignment(){
+        return [
+            this.boilRockFish,
+            this.boilAmago,
+            this.dryNightRainbow,
+            this.dryNightRockFish,
+            this.dryNightAmago,
+            this.boneAlcohol,
+            this.smoked,
+            this.beer,
+            this.beverage,
+            this.rainKappa,
+            this.tenugui,
+        ]
+    }
+    getClearingList() {
+        return [
             this.jalanPoint,
-            this.jalanCoupon, 
-            '', 
-            this.playInGero, 
+            this.jalanCoupon,
+            this.onlinePayment,
+            this.playInGero,
         ]
     }
 

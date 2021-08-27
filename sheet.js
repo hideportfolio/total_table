@@ -19,6 +19,7 @@ var SHEET_DAILY = {
         jalan_point: 33,
         jalan_coupon: 35,
         play_in_gero: 37,
+        online_payment: 39,
         deduction_subtotal: 41,
 
         rainbow_fish: 44,
@@ -35,8 +36,20 @@ var SHEET_DAILY = {
         styrol: 66,
         lunch: 68,
         subtotal: 72,
-        product_sales: 75,
-        total: 78,
+
+        boil_rock_fish: 77,
+        boil_amago: 79,
+        dry_night_rainbow: 81,
+        dry_night_rock_fish: 83,
+        dry_night_amago: 85,
+        bone_alcohol: 87,
+        smoked: 89,
+        beer: 91,
+        beverage: 93,
+        rain_kappa: 95,
+        tenugui: 97,
+        product_sales: 101,
+        total: 105,
     },
     column: 70
 };
