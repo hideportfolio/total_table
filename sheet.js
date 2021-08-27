@@ -44,8 +44,13 @@ var SHEET_DAILY = {
 function getDaily(date = '1') {
     const sheetName = date;
     const sheet = SpreadsheetApp.openById(SS_DAILY_ID).getSheetByName(sheetName);
-    let data = sheet.getRange('BR1:BR79').getValues();
+    let data = sheet.getRange('BR1:BS79').getValues();
     data = new DailyTable(data);
     // Logger.log(data)
     return data;
+}
+
+function refreshSheet(sheetName, outList, startColumn = 4, startRow = 8) {
+    const sheet = SpreadsheetApp.openById(SS_MONTHLY_ID).getSheetByName(sheetName);
+    sheet.getRange(startRow, startColumn, outList.length, outList[0].length).setValues(outList);
 }

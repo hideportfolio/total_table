@@ -31,49 +31,54 @@ class DailyTable {
         this.riceSingle = matrix[SHEET_DAILY.row.rice_single - 1][0];
         this.styrol = matrix[SHEET_DAILY.row.styrol - 1][0];
         this.lunch = matrix[SHEET_DAILY.row.lunch - 1][0];
-        this.subtotal= matrix[SHEET_DAILY.row.subtotal - 1][0];
-        this.product_sales= matrix[SHEET_DAILY.row.product_sales - 1][0];
-        this.total= matrix[SHEET_DAILY.row.total - 1][0];
+        this.subtotal = matrix[SHEET_DAILY.row.subtotal - 1][0];
+        this.product_sales = matrix[SHEET_DAILY.row.product_sales - 1][0];
+        this.total = matrix[SHEET_DAILY.row.total - 1][0];
     }
-
-    getForm(row) {
-        this.date = row[SHEET_SKILL_CHECK_EX.column.date - 1];
-        this.trainer = row[SHEET_SKILL_CHECK_EX.column.trainer_name - 1].replace(/\s+/g, '');
-        this.trainee = row[SHEET_SKILL_CHECK_EX.column.trainee_name - 1].replace(/\s+/g, '');
-        this.stage = row[SHEET_SKILL_CHECK_EX.column.stage - 1];
-        this.scoreRate = row[SHEET_SKILL_CHECK_EX.column.scoreRate - 1];
-        this.skillCheckCount.circle = row[SHEET_SKILL_CHECK_EX.column.skillCheckCircleCount - 1];
-        this.skillCheckCount.triangle = row[SHEET_SKILL_CHECK_EX.column.skillCheckTriangleCount - 1];
-        this.skillCheckCount.faild = row[SHEET_SKILL_CHECK_EX.column.skillCheckFaildCount - 1];
-        this.row = row;
-
-        return this;
-    }
-
-    formDataFormating(date = undefined) {
-        this.skillCheckCount.faild = this.row.filter(n => n === '×').length;
-        this.skillCheckCount.triangle = this.row.filter(n => n === '△').length;
-        this.skillCheckCount.circle = this.row.filter(n => n === '◯').length;
-        this.scoreRate = this.getScoreRate();
-
-        this.date = date ? Moment.moment(date)
-            : this.date ? Moment.moment(this.date)
-                : Moment.moment();
-
-        this.date = this.date.format('YYYY/MM/DD');
+    getConsignmentList1() {
         return [
-            this.date,
-            this.trainer,
-            this.trainee,
-            this.stage,
-            this.scoreRate,
-            this.skillCheckCount.circle,
-            this.skillCheckCount.triangle,
-            this.skillCheckCount.faild
+            this.admission, 
+            this.riverFishing, 
+            this.pondFishing, 
+            this.lureFishingRental, 
+            this.lureLostSecondTimeAfter, 
+            this.riverFishingSetMeal, 
+            this.pondFishingSetMeal, 
+            this.lureHalfDayLesson, 
+            this.lureAllDayLesson, 
+            this.lureHalfDayLessonPack, 
+            this.lureAllDayLessonPack, 
+            this.campSiteUseFee, 
         ];
     }
 
-    getScoreRate() {
-        return (this.skillCheckCount.triangle + this.skillCheckCount.circle * 2) / ((this.skillCheckCount.faild + this.skillCheckCount.triangle + this.skillCheckCount.circle) * 2) * 100;
+    getConsignmentList2() {
+        return [
+        this.rainbowFish, 
+        this.rockFish, 
+        this.saltRoast, 
+        this.tempura, 
+        this.sashimi, 
+        this.stickDrop, 
+        this.saltRoastRockFish, 
+        this.tempuraRockFish, 
+        this.stickDropRockFish, 
+        this.riceSet, 
+        this.riceSingle, 
+        this.styrol, 
+        this.lunch, 
+        this.subtotal,
+        this.product_sales,
+        this.total,
+        ];
     }
+    getClearingList(){
+        return[
+            this.jalanPoint,
+            this.jalanCoupon, 
+            '', 
+            this.playInGero, 
+        ]
+    }
+
 }
